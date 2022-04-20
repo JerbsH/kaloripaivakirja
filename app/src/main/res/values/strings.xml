@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">kaloripaivakirja</string>
+    <string name="otsikko">Lisää omat tiedot</string>
+    <string name="lisaa_button">Lisää tiedot</string>
+    <string name="paino">Paino kiloina</string>
+    <string name="pituus">Pituus sentteinä</string>
+    <string name="ika">Ikä vuosina</string>
+    <string name="sukupuoli_mies">Mies</string>
+    <string name="sukupuoli_nainen">Nainen</string>
 </resources>

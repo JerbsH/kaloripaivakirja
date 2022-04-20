@@ -6,4 +6,96 @@
     android:layout_height="match_parent"
     tools:context=".tietojenlisays">
 
+    <TextView
+        android:id="@+id/otsikkoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="@string/otsikko"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/lisaaButton"
+        android:layout_width="191dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="112dp"
+        android:text="@string/lisaa_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.885" />
+
+    <EditText
+        android:id="@+id/lisaaPituus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/pituus"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otsikkoTextView"
+        tools:text="@string/pituus"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/lisaaPaino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/paino"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lisaaPituus"
+        tools:text="@string/paino"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/lisaaIka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/ika"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lisaaPaino"
+        tools:text="@string/ika"
+        android:importantForAutofill="no" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="143dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lisaaIka">
+
+        <RadioButton
+            android:id="@+id/radioSukupuoliMies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sukupuoli_mies"
+            tools:text="@string/sukupuoli_mies" />
+
+        <RadioButton
+            android:id="@+id/radioSukupuoliNainen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sukupuoli_nainen" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
