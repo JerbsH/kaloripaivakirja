@@ -9,6 +9,7 @@ public class MainActivity extends AppCompatActivity {
      * Ryhmä 1 sovellus kaloripäiväkirja
      *
      */
+    // moromoro
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
