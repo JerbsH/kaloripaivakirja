@@ -11,4 +11,5 @@ public class ruokalisays extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ruokalisays);
     }
+    //ruoka class joka kattoo mikä radio valittuna ja lisää kalorit oikeeseen muuttujaan
 }

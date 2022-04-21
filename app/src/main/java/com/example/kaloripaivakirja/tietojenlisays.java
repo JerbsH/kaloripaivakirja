@@ -12,4 +12,5 @@ public class tietojenlisays extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tietojenlisays);
     }
+    //henkilö class sama kun tiedot.java, tässä lisätään tiedot muuttujiin
 }

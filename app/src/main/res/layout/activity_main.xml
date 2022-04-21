@@ -205,7 +205,7 @@
         app:layout_constraintVertical_bias="0.483" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonLisaaRuoka"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lisää ruoka"
@@ -217,7 +217,7 @@
         app:layout_constraintVertical_bias="0.639" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonOmatTiedot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Omat tiedot"

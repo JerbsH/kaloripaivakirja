@@ -11,4 +11,5 @@ public class tiedot extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tiedot);
     }
+    //henkilö class josta otetaan tiedot tähän näkymään
 }
