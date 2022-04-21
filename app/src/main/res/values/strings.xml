@@ -5,6 +5,7 @@
     <string name="paino">Paino kiloina</string>
     <string name="pituus">Pituus sentteinä</string>
     <string name="ika">Ikä vuosina</string>
+    <string name="sukupuoli">Sukupuoli</string>
     <string name="sukupuoli_mies">Mies</string>
     <string name="sukupuoli_nainen">Nainen</string>
     <string name="aamiainen">Aamiainen</string>
@@ -13,4 +14,6 @@
     <string name="iltapala">Iltapala</string>
     <string name="ruoka">Anna syödyn ruuan tiedot</string>
     <string name="kalorit">Anna kalorimäärä (kcal)</string>
+    <string name="tiedot_otsikko">Omat tiedot</string>
+    <string name="muokkaa_button">Muokkaa omia tietoja</string>
 </resources>
