@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class tiedot extends AppCompatActivity {
 
@@ -21,9 +22,18 @@ public class tiedot extends AppCompatActivity {
             }
         });
     }
-    public void muokkaaTietoja(){
+
+    public void muokkaaTietoja() {
         Intent muokkaaTiedot = new Intent(this, tietojenlisays.class);
         startActivity(muokkaaTiedot);
     }
-    //henkilö class josta otetaan tiedot tähän näkymään
+
+    {
+        Intent intent = getIntent();
+        String text = intent.getStringExtra(Intent.EXTRA_TEXT);
+
+        TextView tiedotPainoText = (TextView)findViewById(R.id.lisaaPaino);
+        TextView.setText(text);
+        //henkilö class josta otetaan tiedot tähän näkymään
+    }
 }
