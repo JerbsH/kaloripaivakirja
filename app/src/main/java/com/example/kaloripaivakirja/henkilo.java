@@ -1,6 +1,8 @@
 package com.example.kaloripaivakirja;
 
-public class henkilo {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class henkilo  extends AppCompatActivity {
     private String paino;
     private String pituus;
     private String ika;
