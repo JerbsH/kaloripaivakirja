@@ -4,19 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/kuva"
     tools:context=".tietojenlisays">
 
     <TextView
         android:id="@+id/otsikkoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/otsikko"
         android:textAllCaps="true"
-        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.198" />
 
     <Button
         android:id="@+id/lisaaButton"
@@ -24,62 +33,87 @@
         android:layout_height="62dp"
         android:layout_marginBottom="112dp"
         android:text="@string/lisaa_button"
+        android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.885" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/lisaaPituus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
+        android:shadowColor="#000000"
+        android:shadowDx="2.5"
+        android:shadowDy="2.5"
+        android:shadowRadius="2.5"
         android:hint="@string/pituus"
+        android:importantForAutofill="no"
         android:inputType="number"
+        android:gravity="center"
         android:minHeight="48dp"
+        android:textColor="#ffffff"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/otsikkoTextView"
-        tools:text="@string/pituus"
-        android:importantForAutofill="no" />
+        tools:text="@string/pituus" />
 
     <EditText
         android:id="@+id/lisaaPaino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
+        android:shadowColor="#000000"
+        android:shadowDx="2.5"
+        android:shadowDy="2.5"
+        android:shadowRadius="2.5"
         android:hint="@string/paino"
+        android:importantForAutofill="no"
         android:inputType="number"
+        android:gravity="center"
         android:minHeight="48dp"
+        android:textColor="#ffffff"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lisaaPituus"
-        tools:text="@string/paino"
-        android:importantForAutofill="no" />
+        tools:text="@string/paino" />
 
     <EditText
         android:id="@+id/lisaaIka"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
+        android:shadowColor="#000000"
+        android:shadowDx="2.5"
+        android:shadowDy="2.5"
+        android:shadowRadius="2.5"
         android:hint="@string/ika"
+        android:importantForAutofill="no"
         android:inputType="number"
+        android:gravity="center"
         android:minHeight="48dp"
+        android:textColor="#ffffff"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lisaaPaino"
-        tools:text="@string/ika"
-        android:importantForAutofill="no" />
+        tools:text="@string/ika" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="143dp"
         android:layout_height="120dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lisaaIka">
@@ -89,13 +123,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sukupuoli_mies"
+            android:textColor="#ffffff"
+            android:typeface="serif"
             tools:text="@string/sukupuoli_mies" />
 
         <RadioButton
             android:id="@+id/radioSukupuoliNainen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sukupuoli_nainen" />
+            android:text="@string/sukupuoli_nainen"
+            android:textColor="#ffffff"
+            android:typeface="serif" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
