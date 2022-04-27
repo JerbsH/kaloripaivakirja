@@ -48,24 +48,28 @@
             android:id="@+id/radioAamiainen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/aamiainen" />
 
         <RadioButton
             android:id="@+id/radioLounas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/lounas" />
 
         <RadioButton
             android:id="@+id/radioPaivallinen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/paivallinen" />
 
         <RadioButton
             android:id="@+id/radioIltapala"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/iltapala" />
     </RadioGroup>
 
