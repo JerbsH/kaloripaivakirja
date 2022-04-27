@@ -16,4 +16,5 @@
     <string name="kalorit">Anna kalorimäärä (kcal)</string>
     <string name="tiedot_otsikko">Omat tiedot</string>
     <string name="muokkaa_button">Muokkaa omia tietoja</string>
+    <string name="nolla">0</string>
 </resources>
