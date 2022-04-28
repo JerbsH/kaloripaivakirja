@@ -15,9 +15,10 @@ import android.widget.TextView;
  * Sovelluksen tehnyt Petteri Helttula ja Jere Hippeläinen
  */
 public class MainActivity extends AppCompatActivity {
-    String ruokaNimi;
+    String ruokaNimi, yhtText, jaljellaMaara;
     int kalorit;
-    TextView aamu, lounas, paiva, ilta;
+    int kaloriIlta, kaloriAamu, kaloriPaiva, kaloriLounas, yhteensa, kaloriTavoite, tavoitteeseen;
+    TextView aamu, lounas, paiva, ilta, yht, maara, jaljella;
     Intent ruokaTiedot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,5 +68,32 @@ public class MainActivity extends AppCompatActivity {
                 ilta.setText(k);
                 break;
         }
+        kaloritYht();
+    }
+    public void kaloritYht(){
+        aamu = findViewById(R.id.aamuArvo);
+        lounas = findViewById(R.id.lounasArvo);
+        paiva = findViewById(R.id.paivaArvo);
+        ilta = findViewById(R.id.iltaArvo);
+        yht = findViewById(R.id.kaloriMaaraNyt);
+        maara = findViewById(R.id.kaloriVastaus);
+        jaljella = findViewById(R.id.kaloritJaljellavastaus);
+
+        kaloriAamu = Integer.parseInt(aamu.getText().toString());
+        kaloriLounas = Integer.parseInt(lounas.getText().toString());
+        kaloriPaiva = Integer.parseInt(paiva.getText().toString());
+        kaloriIlta = Integer.parseInt(ilta.getText().toString());
+        yhteensa = kaloriAamu + kaloriLounas + kaloriPaiva + kaloriIlta;
+        yhtText = Integer.toString(yhteensa);
+        kaloriTavoite = Integer.parseInt(maara.getText().toString());
+        tavoitteeseen = kaloriTavoite - yhteensa;
+        jaljellaMaara = Integer.toString(tavoitteeseen);
+
+        yht.setText(yhtText);
+        if (tavoitteeseen < 0){
+            jaljellaMaara = "0";
+        }
+        jaljella.setText(jaljellaMaara);
+
     }
 }
