@@ -11,17 +11,21 @@
         android:theme="@style/Theme.Kaloripaivakirja">
         <activity
             android:name=".tiedot"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ruokalisays"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity">
         </activity>
         <activity
             android:name=".tietojenlisays"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity">
         </activity>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
