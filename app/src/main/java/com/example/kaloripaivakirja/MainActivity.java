@@ -3,13 +3,11 @@ package com.example.kaloripaivakirja;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -36,12 +34,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Vie ruuan lisäys ruutuun.
      */
     public void lisaaRuoka(){
         Intent ruokaLisaa = new Intent(this, ruokalisays.class);
         startActivity(ruokaLisaa);
     } // Ruuan lisäämiseen tarkoitettuun aktiviteettiin siirtyminen
+
+    /**
+     *  Vie omiin tietoihin joiden kautta pääsee lisäämään omia tietoja.
+     */
     public void naytaTiedot(){
         Intent omatTiedot = new Intent(this, tiedot.class);
         startActivity(omatTiedot);
@@ -52,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d("MY_TAG", "meni main");
         ruokaTiedot = getIntent();
-        SharedPreferences ruokatieto = getSharedPreferences("Ruokatieto" , Activity.MODE_PRIVATE);
+        SharedPreferences ruokatieto = getSharedPreferences("Ruokatieto" , Activity.MODE_PRIVATE); // tuo ruuan tiedot lisäys aktiviteetista.
         ruokaNimi = ruokatieto.getString("Ruoka", "");
         kalorit = ruokatieto.getInt("kalori", -1);
         String k = String.valueOf(kalorit);
-        switch (ruokaNimi) {
+        switch (ruokaNimi) { // tarkistaa minkä ruuan kalorit annettiin ja lisää ne oikean ruuan alle.
             case "aamu":
                 aamu = findViewById(R.id.aamuArvo);
                 aamu.setText(k);
@@ -76,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
         }
         kaloritYht();
     }
+
+    /**
+     * Ottaa kalorien määrän ruuista ja lisää ne jäljellä ja kokonaismäärä laskuriin.
+     */
     public void kaloritYht(){
         aamu = findViewById(R.id.aamuArvo);
         lounas = findViewById(R.id.lounasArvo);
