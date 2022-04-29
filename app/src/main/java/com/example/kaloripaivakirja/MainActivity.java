@@ -1,5 +1,4 @@
 package com.example.kaloripaivakirja;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -8,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -21,16 +21,16 @@ public class MainActivity extends AppCompatActivity {
     int kaloriIlta, kaloriAamu, kaloriPaiva, kaloriLounas, yhteensa, kaloriTavoite, tavoitteeseen;
     TextView aamu, lounas, paiva, ilta, yht, maara, jaljella;
     Intent ruokaTiedot;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("MY_TAG", "teki sovelluksen");
         setContentView(R.layout.activity_main);
         Button ruoka = findViewById(R.id.buttonLisaaRuoka);
         Button tiedot = findViewById(R.id.buttonOmatTiedot);
         ruoka.setOnClickListener(view -> lisaaRuoka()); // onClickListener ruoka napin painamiseen
         tiedot.setOnClickListener(view -> naytaTiedot()); // onClickListener tiedot napin painamiseen
-
+        progressBar = findViewById(R.id.progressBar);
     }
 
     /**
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("MY_TAG", "meni main");
         ruokaTiedot = getIntent();
         SharedPreferences ruokatieto = getSharedPreferences("Ruokatieto" , Activity.MODE_PRIVATE); // tuo ruuan tiedot lisäys aktiviteetista.
         ruokaNimi = ruokatieto.getString("Ruoka", "");
@@ -77,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         kaloritYht();
+        updateBar();
     }
 
     /**
@@ -107,5 +107,9 @@ public class MainActivity extends AppCompatActivity {
         }
         jaljella.setText(jaljellaMaara);
 
+    }
+    public void updateBar(){
+        progressBar.setMax(kaloriTavoite);
+        progressBar.setProgress(yhteensa);
     }
 }

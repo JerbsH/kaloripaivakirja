@@ -1,5 +1,8 @@
 package com.example.kaloripaivakirja;
 
+/**
+ * @author Jere
+ */
 public class Ruoka {
     private String ruoka;
     private int kcal;
