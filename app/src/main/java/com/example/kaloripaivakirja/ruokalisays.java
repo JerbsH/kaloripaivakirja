@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
-
+/**
+ * @author Jere
+ * Ruokien kalorien lisäämiseen tarkoitettu class
+ */
 public class ruokalisays extends AppCompatActivity {
     public String ruoka;
     public String kcalValue;
@@ -28,8 +31,9 @@ public class ruokalisays extends AppCompatActivity {
         Button lisaa = findViewById(R.id.buttonRuoka);
         lisaa.setOnClickListener(view -> takaisinMain());
     }
-
-    // Tarkastaa mikä ruoka valittuna
+    /**
+     * Tarkistaa mikä radio button on valittu ja asettaa oikein ruuan nimen
+     */
     public void onRadioButtonClicked(View view) {
         this.view = view;
         boolean checked = ((RadioButton) view).isChecked();
@@ -47,24 +51,29 @@ public class ruokalisays extends AppCompatActivity {
             Log.d("MY_TAG", ruoka);
         } else {
             ruoka = "";
-            Log.d("MY_TAG", ruoka);
+            Log.d("MY_TAG", "tyhjä");
         }
     }
+
+    /**
+     * Palaa takaisin main activityyn ja vie samalla annetun ruuan tiedot
+     */
     public void takaisinMain(){
         kcalValue = num.getText().toString(); // kalorit muuttujaan
-        Log.d("MY_TAG", kcalValue);
-        kcal = Integer.parseInt(kcalValue);
+        if (kcalValue.equals("")){
+            kcal = 0;
+        }else{
+            kcal = Integer.parseInt(kcalValue);
+        }
         Ruoka food;
         food = new Ruoka(ruoka, kcal);
         String ruoka = food.getRuoka();
-        Log.d("MY_TAG", ruoka);
         int kcal = food.getKcal();
-        Log.d("MY_TAG", "kcalValue");
         SharedPreferences ruokatieto = getSharedPreferences("Ruokatieto" , Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = ruokatieto.edit();
-        editor.putInt("kalori", kcal);
+        editor.putInt("kalori", kcal); // kalorimäärä sharedpreferenceihin jotta ne saadaan mainiin
         editor.apply();
-        editor.putString("Ruoka", ruoka);
+        editor.putString("Ruoka", ruoka); // ruuan nimi sharedpreferenceihin jotta se saadaan mainiin
         editor.apply();
         finish();
     }

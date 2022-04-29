@@ -3,16 +3,19 @@ package com.example.kaloripaivakirja;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
  * Ryhmä 1 sovellus kaloripäiväkirja
  * Sovelluksen tehnyt Petteri Helttula ja Jere Hippeläinen
+ * Kalorilaskuri, joka laskee painon, pituuden, iän, ja sukupuolen mukaan tarvittavan kalorimäärän.
  */
 public class MainActivity extends AppCompatActivity {
     String ruokaNimi, yhtText, jaljellaMaara;
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     */
     public void lisaaRuoka(){
         Intent ruokaLisaa = new Intent(this, ruokalisays.class);
         startActivity(ruokaLisaa);
