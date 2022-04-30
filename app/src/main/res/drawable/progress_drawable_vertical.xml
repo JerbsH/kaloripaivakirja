@@ -18,4 +18,5 @@
             </shape>
         </clip>
     </item>
-</layer-list>
+</layer-list> <!-- Idea from: https://stackoverflow.com/questions/3926395/android-set-a-progressbar-to-be-a-vertical-bar-instead-of-horizontal
+                    some things added and colors changed -->
