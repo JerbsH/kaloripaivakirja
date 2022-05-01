@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 public class tietojenlisays extends AppCompatActivity {
-    String sukupuoli = "";
+    public String sukupuoli = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
