@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <color android:color="#00FFFFFF" />
+    </item>
+    <item android:id="@android:id/progress">
+        <clip
+            android:clipOrientation="vertical"
+            android:gravity="bottom">
+            <shape tools:ignore="ExtraText">
+                <corners android:radius="25sp" />
+                <gradient
+                    android:startColor="#00FF00"
+                    android:centerColor="#66ffff"
+                    android:endColor="#0073e6"
+                    android:angle="90" />
+            </shape>
+        </clip>
+    </item>
+</layer-list> <!-- Idea from: https://stackoverflow.com/questions/3926395/android-set-a-progressbar-to-be-a-vertical-bar-instead-of-horizontal
+                    some things added and colors changed -->
