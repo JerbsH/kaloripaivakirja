@@ -39,13 +39,6 @@ public class tietojenlisays extends AppCompatActivity {
 
         setContentView(R.layout.activity_tietojenlisays);
     }
-   public void onButtonClick(View view) {
-        EditText lisaaPaino = (EditText)findViewById(R.id.lisaaPaino);
-        String uusiHenkilo = lisaaPaino.getText().toString();
-
-        Intent intent = new Intent(this, tiedot.class);
-        intent.putExtra(Intent.EXTRA_TEXT, uusiHenkilo);
-        startActivity(intent);
    }
-}
+
     //henkilö class sama kun tiedot.java, tässä lisätään tiedot muuttujiin
