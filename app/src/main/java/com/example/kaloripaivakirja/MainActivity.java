@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -16,11 +15,10 @@ import android.widget.TextView;
  * Kalorilaskuri, joka laskee painon, pituuden, iän, ja sukupuolen mukaan tarvittavan kalorimäärän.
  */
 public class MainActivity extends AppCompatActivity {
-    String ruokaNimi, yhtText, jaljellaMaara;
+    String ruokaNimi, yhtText, jaljellaMaara, tieto;
     int kalorit;
     int kaloriIlta, kaloriAamu, kaloriPaiva, kaloriLounas, yhteensa, kaloriTavoite, tavoitteeseen;
     TextView aamu, lounas, paiva, ilta, yht, maara, jaljella;
-    Intent ruokaTiedot;
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +50,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        ruokaTiedot = getIntent();
         SharedPreferences ruokatieto = getSharedPreferences("Ruokatieto" , Activity.MODE_PRIVATE); // tuo ruuan tiedot lisäys aktiviteetista.
+        SharedPreferences henkiloTiedot = getSharedPreferences("Henkilötiedot", Activity.MODE_PRIVATE);
+        tieto = henkiloTiedot.getString("kaloriTarve", "");
+        maara = findViewById(R.id.kaloriVastaus);
+        if(tieto.equals("")){
+            tieto = "0";
+        }
+        maara.setText(tieto);
         ruokaNimi = ruokatieto.getString("Ruoka", "");
         kalorit = ruokatieto.getInt("kalori", -1);
         String k = String.valueOf(kalorit);

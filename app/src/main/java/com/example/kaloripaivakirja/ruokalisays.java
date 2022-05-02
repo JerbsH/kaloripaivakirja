@@ -25,7 +25,6 @@ public class ruokalisays extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("MY_TAG", "meni lisäykseen");
         setContentView(R.layout.activity_ruokalisays);
         num = findViewById(R.id.kaloritText);
         Button lisaa = findViewById(R.id.buttonRuoka);
@@ -39,19 +38,14 @@ public class ruokalisays extends AppCompatActivity {
         boolean checked = ((RadioButton) view).isChecked();
         if (view.getId() == R.id.radioAamiainen && checked) {
             ruoka = "aamu";
-            Log.d("MY_TAG", ruoka);
         } else if(view.getId() == R.id.radioLounas && checked){
             ruoka = "lounas";
-            Log.d("MY_TAG", ruoka);
         } else if(view.getId() == R.id.radioPaivallinen && checked){
             ruoka = "paiva";
-            Log.d("MY_TAG", ruoka);
         } else if(view.getId() == R.id.radioIltapala && checked){
             ruoka = "ilta";
-            Log.d("MY_TAG", ruoka);
         } else {
             ruoka = "";
-            Log.d("MY_TAG", "tyhjä");
         }
     }
 
