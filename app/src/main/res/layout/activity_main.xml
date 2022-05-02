@@ -7,20 +7,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/kuva4"
 
-    tools:context=".MainActivity"><![CDATA[
-
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText"><![CDATA[
     30sp
         app:layout_constraintVertical_bias="0.066" />
-
-
-
-
-
-
-
-
-
-
     ]]>
 
     <TextView

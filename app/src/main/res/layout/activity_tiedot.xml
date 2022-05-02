@@ -5,7 +5,10 @@
     android:id="@+id/tiedotText"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tiedot">
+    android:background="@drawable/kuva2"
+    tools:context=".tiedot"
+    tools:ignore="ExtraText">
+
 
     <TextView
         android:id="@+id/tiedotOtsikko"
