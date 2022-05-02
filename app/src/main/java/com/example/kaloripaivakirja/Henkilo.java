@@ -38,9 +38,9 @@ public class Henkilo extends AppCompatActivity {
     }
     public void setKaloritarve() {
         if (this.sukupuoli.equals("mies")) {
-            this.tarve = (66.47 + (13.75 * this.paino) + (5 * this.pituus) - (6.76 * this.ika)) * 1.7;
+            this.tarve = (66.47 + (13.75 * this.paino) + (5 * this.pituus) - (6.76 * this.ika)) * 1.5;
         } else if (sukupuoli.equals("nainen")) {
-            this.tarve = (655.1 + (9.563 * this.paino) + (1.85 * this.pituus) - (4.68 * this.ika)) * 1.7;
+            this.tarve = (655.1 + (9.563 * this.paino) + (1.85 * this.pituus) - (4.68 * this.ika)) * 1.5;
         } else {
             this.tarve = 0;
         }
