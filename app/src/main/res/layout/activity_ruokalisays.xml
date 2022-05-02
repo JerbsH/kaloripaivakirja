@@ -4,32 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/kuva3"
     tools:context=".ruokalisays">
 
     <TextView
         android:id="@+id/otsikko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
         android:text="@string/ruoka"
         android:textAllCaps="true"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:typeface="serif"
+        android:textColor="#ffffff"
+        android:shadowColor="#000000"
+        android:shadowDx="2.5"
+        android:shadowDy="2.5"
+        android:shadowRadius="2.5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271" />
 
     <EditText
         android:id="@+id/kaloritText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_width="224dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/kalorit"
         android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2.5"
+        android:shadowDy="2.5"
+        android:shadowRadius="2.5"
+        android:textColor="#ffffff"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
         tools:text="@string/kalorit" />
@@ -38,9 +53,9 @@
         android:id="@+id/radioGroup2"
         android:layout_width="144dp"
         android:layout_height="227dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/otsikko">
 
@@ -49,37 +64,63 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="@string/aamiainen" />
+            android:text="@string/aamiainen"
+            android:typeface="serif"
+            android:textColor="#ffffff"
+            android:shadowColor="#000000"
+            android:shadowDx="2.5"
+            android:shadowDy="2.5"
+            android:shadowRadius="2.5"/>
 
         <RadioButton
             android:id="@+id/radioLounas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="@string/lounas" />
+            android:text="@string/lounas"
+            android:typeface="serif"
+            android:textColor="#ffffff"
+            android:shadowColor="#000000"
+            android:shadowDx="2.5"
+            android:shadowDy="2.5"
+            android:shadowRadius="2.5"/>
 
         <RadioButton
             android:id="@+id/radioPaivallinen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="@string/paivallinen" />
+            android:text="@string/paivallinen"
+            android:typeface="serif"
+            android:textColor="#ffffff"
+            android:shadowColor="#000000"
+            android:shadowDx="2.5"
+            android:shadowDy="2.5"
+            android:shadowRadius="2.5"/>
 
         <RadioButton
             android:id="@+id/radioIltapala"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="@string/iltapala" />
+            android:text="@string/iltapala"
+            android:typeface="serif"
+            android:textColor="#ffffff"
+            android:shadowColor="#000000"
+            android:shadowDx="2.5"
+            android:shadowDy="2.5"
+            android:shadowRadius="2.5"/>
     </RadioGroup>
 
     <Button
         android:id="@+id/buttonRuoka"
         android:layout_width="156dp"
         android:layout_height="48dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:text="@string/lisaa_button"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kaloritText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
