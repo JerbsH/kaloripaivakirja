@@ -30,6 +30,7 @@ public class Henkilo extends AppCompatActivity {
      * @return Henkilön paino
      */
     public String getPaino(){
+        tarkastaArvot();
         return String.valueOf(this.paino);
     }
 
@@ -38,6 +39,7 @@ public class Henkilo extends AppCompatActivity {
      * @return Henkilön pituus
      */
     public String getPituus(){
+        tarkastaArvot();
         return String.valueOf(this.pituus);
     }
 
@@ -46,6 +48,7 @@ public class Henkilo extends AppCompatActivity {
      * @return Henkilön ikä
      */
     public String getIka(){
+        tarkastaArvot();
         return String.valueOf(this.ika);
     }
     /**
@@ -72,12 +75,24 @@ public class Henkilo extends AppCompatActivity {
                 break;
         }
     }
+    public void tarkastaArvot(){
+        if (pituus > 250){
+            this.pituus = 250;
+        }
+        if (paino > 200){
+            this.paino = 200;
+        }
+        if (ika > 120){
+            this.ika = 120;
+        }
+    }
 
     /**
      * Laskee kaloritarpeen setKaloritarve avulla ja palauttaa kaloritarpeen
      * @return kaloritarve
      */
     public String getKalorit(){
+        tarkastaArvot();
         setKaloritarve();
         int kaloritarve = (int) tarve;
         return String.valueOf(kaloritarve);
