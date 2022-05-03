@@ -12,7 +12,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 public class tietojenlisays extends AppCompatActivity {
-    public String sukupuoli, paino, ika, pituus;
+    public String  paino, ika, pituus;
+    public String sukupuoli = "Ei annettu";
     EditText lisaaPituus, lisaaIka, lisaaPaino;
     Henkilo henkilo;
     private View view;
@@ -25,8 +26,13 @@ public class tietojenlisays extends AppCompatActivity {
         lisaaPituus = findViewById(R.id.lisaaPituus);
         lisaaIka = findViewById(R.id.lisaaIka);
         lisaaPaino = findViewById(R.id.lisaaPaino);
-        lisaa.setOnClickListener(view -> vieTiedot());
+        lisaa.setOnClickListener(view -> vieTiedot()); // listeneri napille jolla viedään tiedot eteenpäin. Suorittaa vieTiedot().
     }
+
+    /**
+     * Tarkastaa radiobuttonista mikä sukupuoli on valittuna ja asettaa sen oikein muuttujaan.
+     *
+     */
     public void onRadioButtonClicked(View view) {
         this.view = view;
         boolean checked = ((RadioButton) view).isChecked();
@@ -34,21 +40,33 @@ public class tietojenlisays extends AppCompatActivity {
             sukupuoli = "mies";
         } else if(view.getId() == R.id.radioSukupuoliNainen && checked){
             sukupuoli = "nainen";
-        } else {
-            sukupuoli = "";
         }
     }
+
+    /**
+     * Ottaa tiedot tekstikentistä henkilön tiedot ja lisää niillä uuden henkilön.
+     * Tämän jälkeen ottaa henkilöltä tiedot ja vie ne sharedpreferenceihin ja lopettaa aktiviteetin.
+     */
     public void vieTiedot(){
         pituus = lisaaPituus.getText().toString();
         paino = lisaaPaino.getText().toString();
         ika = lisaaIka.getText().toString();
+        if (pituus.equals("")){
+            pituus = "0";
+        }
+        if (paino.equals("")){
+            paino = "0";
+        }
+        if (ika.equals("")){
+            ika = "0";
+        }
+        Log.e("MY", sukupuoli);
         henkilo = new Henkilo(paino, pituus,ika, sukupuoli);
         String omaPituus = henkilo.getPituus();
         String omaPaino = henkilo.getPaino();
         String omaIka = henkilo.getIka();
         String omaSuku = henkilo.getSukupuoli();
         String kaloriTarve = henkilo.getKalorit();
-        Log.d("MY", kaloriTarve);
         SharedPreferences henkiloTiedot = getSharedPreferences("Henkilötiedot", Activity.MODE_PRIVATE);
         SharedPreferences.Editor henkEditor = henkiloTiedot.edit();
         henkEditor.putString("paino", omaPaino);

@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,8 +18,12 @@ public class tiedot extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tiedot);
         Button muokkaa = findViewById(R.id.muokkaaButton);
-        muokkaa.setOnClickListener(view -> muokkaaTietoja());
+        muokkaa.setOnClickListener(view -> muokkaaTietoja()); // listeneri napin painamiseen joka vie tietojen muokkaamiseen
     }
+
+    /**
+     * Menee seuraavaan aktiviteettin, joka on tietojen muokkaus / lisääminen.
+     */
     public void muokkaaTietoja() {
         Intent muokkaaTiedot = new Intent(this, tietojenlisays.class);
         startActivity(muokkaaTiedot);
@@ -34,12 +37,12 @@ public class tiedot extends AppCompatActivity {
         omaPituus = henkiloTiedot.getString("pituus", "");
         omaIka = henkiloTiedot.getString("ika", "");
         omaSuku = henkiloTiedot.getString("sukupuoli", "");
-        tarve = henkiloTiedot.getString("kaloriTarve","");
-        Log.d("MY", tarve);
         paino = findViewById(R.id.tiedotPainoText);
         pituus = findViewById(R.id.tiedotPituusText);
         ika = findViewById(R.id.tiedotIkaText);
         suku = findViewById(R.id.tiedotSukupuoliText);
+
+        // Hakee tiedot sharedpreferenceistä ja asettaa ne tekstikenttiin oikeisiin paikkoihin.
 
         paino.setText(omaPaino);
         pituus.setText(omaPituus);

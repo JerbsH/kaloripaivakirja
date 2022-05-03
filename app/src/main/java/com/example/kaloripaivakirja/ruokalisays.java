@@ -20,7 +20,6 @@ public class ruokalisays extends AppCompatActivity {
     public String kcalValue;
     public int kcal;
     EditText num;
-    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +30,9 @@ public class ruokalisays extends AppCompatActivity {
         lisaa.setOnClickListener(view -> takaisinMain());
     }
     /**
-     * Tarkistaa mikä radio button on valittu ja asettaa oikein ruuan nimen
+     * Tarkistaa mikä radiobutton on valittu ja asettaa oikein ruuan nimen
      */
     public void onRadioButtonClicked(View view) {
-        this.view = view;
         boolean checked = ((RadioButton) view).isChecked();
         if (view.getId() == R.id.radioAamiainen && checked) {
             ruoka = "aamu";
@@ -54,13 +52,13 @@ public class ruokalisays extends AppCompatActivity {
      */
     public void takaisinMain(){
         kcalValue = num.getText().toString(); // kalorit muuttujaan
-        if (kcalValue.equals("")){
+        if (kcalValue.equals("")){ // Jos kenttä on tyhjä arvoksi nolla
             kcal = 0;
         }else{
             kcal = Integer.parseInt(kcalValue);
         }
         Ruoka food;
-        food = new Ruoka(ruoka, kcal);
+        food = new Ruoka(ruoka, kcal); // uusi ruoka annetuista tiedoista
         String ruoka = food.getRuoka();
         int kcal = food.getKcal();
         SharedPreferences ruokatieto = getSharedPreferences("Ruokatieto" , Activity.MODE_PRIVATE);

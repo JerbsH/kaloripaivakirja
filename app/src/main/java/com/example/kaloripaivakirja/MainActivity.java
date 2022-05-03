@@ -13,6 +13,7 @@ import android.widget.TextView;
  * Ryhmä 1 sovellus kaloripäiväkirja
  * Sovelluksen tehnyt Petteri Helttula ja Jere Hippeläinen
  * Kalorilaskuri, joka laskee painon, pituuden, iän, ja sukupuolen mukaan tarvittavan kalorimäärän.
+ * Laskuri toimii keskivertoaktiiviselle ihmiselle.
  */
 public class MainActivity extends AppCompatActivity {
     String ruokaNimi, yhtText, jaljellaMaara, tieto;
@@ -50,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferences ruokatieto = getSharedPreferences("Ruokatieto" , Activity.MODE_PRIVATE); // tuo ruuan tiedot lisäys aktiviteetista.
-        SharedPreferences henkiloTiedot = getSharedPreferences("Henkilötiedot", Activity.MODE_PRIVATE);
+        SharedPreferences ruokatieto = getSharedPreferences("Ruokatieto" , Activity.MODE_PRIVATE); // tuo ruuan tiedot lisäysaktiviteetista.
+        SharedPreferences henkiloTiedot = getSharedPreferences("Henkilötiedot", Activity.MODE_PRIVATE); // tuo henkilötietoja lisäysaktiviteetista, jotta kaloritarpeen voi lisätä.
         tieto = henkiloTiedot.getString("kaloriTarve", "");
         maara = findViewById(R.id.kaloriVastaus);
-        if(tieto.equals("")){
+        if(tieto.equals("")){ // Jos kaloritarvetta ei ole laskettu, tieto on 0, jotta sovellus ei kaadu.
             tieto = "0";
         }
         maara.setText(tieto);
@@ -106,12 +107,16 @@ public class MainActivity extends AppCompatActivity {
         jaljellaMaara = Integer.toString(tavoitteeseen);
 
         yht.setText(yhtText);
-        if (tavoitteeseen < 0){
+        if (tavoitteeseen < 0){ // Jos kalorien määrä yrittää tavoitteen, jäljellä määrä ei mene miinukselle
             jaljellaMaara = "0";
         }
         jaljella.setText(jaljellaMaara);
 
     }
+
+    /**
+     * Päivittää progressbarin tilanteen vastaamaan ruuista saatuja arvoja.
+     */
     public void updateBar(){
         progressBar.setMax(kaloriTavoite);
         progressBar.setProgress(yhteensa);
