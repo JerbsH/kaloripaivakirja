@@ -14,6 +14,7 @@ import android.widget.TextView;
  * Sovelluksen tehnyt Petteri Helttula ja Jere Hippeläinen
  * Kalorilaskuri, joka laskee painon, pituuden, iän, ja sukupuolen mukaan tarvittavan kalorimäärän.
  * Laskuri toimii keskivertoaktiiviselle ihmiselle.
+ * Molemmat muokanneet ja kirjoittaneet tämän tiedoston koodia.
  */
 public class MainActivity extends AppCompatActivity {
     String ruokaNimi, yhtText, jaljellaMaara, tieto;

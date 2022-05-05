@@ -1,6 +1,7 @@
 package com.example.kaloripaivakirja;
 
 /**
+ * Luo uuden ruuan
  * @author Jere
  */
 public class Ruoka {

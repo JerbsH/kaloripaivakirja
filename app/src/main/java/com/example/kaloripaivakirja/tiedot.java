@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * Listaa henkilön antamat tiedot ruudulle.
+ * Molemmat muokanneet ja kirjoittaneet tämän tiedoston koodia.
+ */
 public class tiedot extends AppCompatActivity {
     String omaPituus, omaPaino, omaIka, omaSuku, tarve;
     TextView paino, pituus, ika, suku;

@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+/**
+ * Omien henkilötietojen lisäämiseen tarkoitettu aktiviteetti.
+ * Nappia painamalla lisää ruudulle syötetyt tiedot henkilölle.
+ * @author Jere
+ */
 public class tietojenlisays extends AppCompatActivity {
     public String  paino, ika, pituus;
     public String sukupuoli = "Ei annettu";
@@ -33,7 +38,7 @@ public class tietojenlisays extends AppCompatActivity {
      * Tarkastaa radiobuttonista mikä sukupuoli on valittuna ja asettaa sen oikein muuttujaan.
      *
      */
-    public void onRadioButtonClicked(View view) {
+    public void onRadioButtonClicked(View view) { // asettaa sukupuolen oikeaksi, jos radio buttonia on painettu. Jos ei painettu sukupuoleksi tulee "Ei annettu"
         this.view = view;
         boolean checked = ((RadioButton) view).isChecked();
         if (view.getId() == R.id.radioSukupuoliMies && checked) {
@@ -51,13 +56,13 @@ public class tietojenlisays extends AppCompatActivity {
         pituus = lisaaPituus.getText().toString();
         paino = lisaaPaino.getText().toString();
         ika = lisaaIka.getText().toString();
-        if (pituus.equals("")){
+        if (pituus.equals("")){ // Jos pituus on tyhjä arvoksi 0
             pituus = "0";
         }
-        if (paino.equals("")){
+        if (paino.equals("")){ // Jos paino on tyhjä arvoksi 0
             paino = "0";
         }
-        if (ika.equals("")){
+        if (ika.equals("")){ // Jos ika on tyhjä arvoksi 0
             ika = "0";
         }
         Log.e("MY", sukupuoli);

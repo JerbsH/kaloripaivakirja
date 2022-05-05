@@ -2,6 +2,9 @@ package com.example.kaloripaivakirja;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * @author Petteri
+ */
 public class Henkilo extends AppCompatActivity {
 
     private double paino;
